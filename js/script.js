@@ -381,7 +381,7 @@ async function clickProgram() {
 
   var remote_file = {
     0: "/versions/v0/1_0xe000_boot_app0.bin",
-    1: "/versions/v0/2_0x1000_bootloader_qio_80m",
+    1: "/versions/v0/2_0x1000_bootloader_qio_80m.bin",
     2: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
     3: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin"    
   }
