@@ -378,7 +378,20 @@ async function makeRequest(method, url) {
  */
 async function clickProgram() {
   const readUploadedFileAsArrayBuffer = (inputFile) => {
+    const reader = new FileReader();
 
+    return new Promise((resolve, reject) => {
+      reader.onerror = () => {
+        reader.abort();
+        reject(new DOMException("Problem parsing input file."));
+      };
+
+      reader.onload = () => {
+        resolve(reader.result);
+      };
+      reader.readAsArrayBuffer(inputFile);
+    });
+  };
 
   baudRate.disabled = true;
   butErase.disabled = true;
@@ -388,8 +401,6 @@ async function clickProgram() {
     offsets[i].disabled = true;
   }
 
-
-  var selected_prog = false;
 
 
   for (let file of getValidFiles()) {
