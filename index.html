@@ -27,7 +27,29 @@
         var versions = {
 
           0: {
-            name: "E-Ink Hello world test",
+            name: "Durometer Prototype v1",
+            files: {
+              0: {
+                url: "/versions/Durometer_Prototype_v0/1_0xe000_boot_app0.bin",
+                offset: "0xe000"
+              },
+              1: {
+                url: "/versions/Durometer_Prototype_v0/2_0x1000_bootloader_qio_80m.bin",
+                offset: "0x1000"
+              },
+              2: {
+                url: "/versions/Durometer_Prototype_v0/3_0x10000_deron-durometer-mbed.ino.bin",
+                offset: "0x10000"
+              },
+              3: { 
+                url: "/versions/Durometer_Prototype_v0/4_0x8000_deron-durometer-mbed.ino.partitions.bin",
+                offset: "0x8000"
+              }
+            }
+          },
+
+          1: {
+            name: "E-ink Hello World v0",
             files: {
               0: {
                 url: "/versions/HelloWorldEink_v0/1_0xe000_boot_app0.bin",
@@ -48,8 +70,8 @@
             }
           },
 
-          1: {
-            name: "BLE test",
+          2: {
+            name: "E-ink Bluetooth Test v0",
             files: {
               0: {
                 url: "/versions/BLE_v0/1_0xe000_boot_app0.bin",
