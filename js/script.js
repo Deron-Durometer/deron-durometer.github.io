@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     debugMsg: debugMsg,
     debug: debug})
   butConnect.addEventListener('click', () => {
-    new clickConnect().catch(async (e) => {
+    clickConnect().catch(async (e) => {
       errorMsg(e.message);
       disconnect();
       toggleUIConnected(false);
@@ -262,6 +262,7 @@ async function reset() {
  * Click handler for the connect/disconnect button.
  */
 async function clickConnect() {
+  console.log("clickConnect")
   if (espTool.connected()) {
     await disconnect();
     toggleUIConnected(false);
