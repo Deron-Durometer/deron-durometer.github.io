@@ -1289,8 +1289,6 @@ class ESPLoader {
             return image;
         }
 
-        // fake
-        this.chip.NAME = "ESP32-S2";
         //console.log(this.chip.NAME + " " + this.chip.BOOTLOADER_FLASH_OFFSET);
 
         //if (address != this.chip.BOOTLOADER_FLASH_OFFSET) {
