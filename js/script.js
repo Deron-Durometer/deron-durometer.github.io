@@ -410,7 +410,7 @@ async function clickProgram() {
 
 
   for (var i = 0; i < Object.keys(selected_data).length; i++){
-    progress[file].classList.remove("hidden");
+    progress[i].classList.remove("hidden");
 
     var single_file = selected_data[i]['url'];
     let contents = await makeRequest("GET", [single_file]);
