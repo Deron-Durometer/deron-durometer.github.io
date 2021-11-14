@@ -406,23 +406,23 @@ async function clickProgram() {
   // NEW
   var selected_index = $('#prog option').filter(':selected').val();
   var selected_data = versions[selected_index]['files'];
+  console.log("selected index = " + selected_index + ", selected_data = " + selected_data);
 
-  for (files in selected_data) {
+  for (index in selected_data) {
     progress[file].classList.remove("hidden");
 
-    var file = selected_data[files]['url'];
-    console.log(file);
-    let contents = await makeRequest("GET", [file]);
+    var single_file = selected_data[index]['url'];
+    let contents = await makeRequest("GET", [single_file]);
 
-    console.log(file);
+    console.log(single_file);
     //console.log(offset);
     console.log(contents);
     try {
-      var offset_value = selected_data[files]['offset'];
+      var offset_value = selected_data[index]['offset'];
       console.log(offset_value);      
       let offset = parseInt(offset_value, 16);
       console.log(offset);
-      await espTool.flashData(contents, offset, file);
+      await espTool.flashData(contents, offset, single_file);
       await sleep(100);
       logMsg("To run the new firmware, please reset your device.");
     } catch(e) {
