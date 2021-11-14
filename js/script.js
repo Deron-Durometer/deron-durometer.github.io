@@ -359,7 +359,7 @@ async function clickProgram() {
     let binfile = firmware[file].files[0];
     let contents = await readUploadedFileAsArrayBuffer(binfile);
     console.log(file);
-    console.log(offset);
+    //console.log(offset);
     console.log(contents);
     try {
       let offset = parseInt(offsets[file].value, 16);
