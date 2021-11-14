@@ -1285,6 +1285,8 @@ class ESPLoader {
         if (image.length < 8) {
             return image;
         }
+        console.log(this.chip.NAME + " " + this.chip.BOOTLOADER_FLASH_OFFSET);
+        
         if (address != this.chip.BOOTLOADER_FLASH_OFFSET) {
             return image;
         }
