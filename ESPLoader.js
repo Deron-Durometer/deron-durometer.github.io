@@ -604,9 +604,6 @@ class ESPLoader {
     ESP_SPI_ATTACH = 0x0D;
     ESP_CHANGE_BAUDRATE = 0x0F;
 
-    // fake
-    CHIP_NAME = "ESP32-S2";
-
     // Only Stub supported commands
     ESP_ERASE_FLASH = 0xD0;
     ESP_ERASE_REGION = 0xD1;
@@ -1003,7 +1000,7 @@ class ESPLoader {
         pkt = this._appendArray(pkt, this._int_to_bytearray(this.FLASH_WRITE_SIZE));
         pkt = this._appendArray(pkt, this._int_to_bytearray(offset));
 
-        if ((this.chip.CHIP_NAME === "ESP32-S2" || this.chip.CHIP_NAME === "ESP32-S3" || this.chip.CHIP_NAME === "ESP32-C3") && (this.IS_STUB === false)) {
+        if (/*(this.chip.CHIP_NAME === "ESP32-S2" || this.chip.CHIP_NAME === "ESP32-S3" || this.chip.CHIP_NAME === "ESP32-C3") && */ (this.IS_STUB === false)) {
             pkt = this._appendArray(pkt, this._int_to_bytearray(0));
         }
         await this.check_command({op_description:"enter compressed flash mode", op:this.ESP_FLASH_DEFL_BEGIN, data:pkt, timeout:timeout});
