@@ -35,6 +35,7 @@ let bytesReceived = 0;
 let currentBoard;
 let buttonState = 0;
 
+var part_index = 0;
 
 
 
@@ -56,7 +57,7 @@ var remote_file = {
   
 
 document.addEventListener('DOMContentLoaded', () => {
-  var part_index = 0;
+
   let debug = false;
   var getParams = {}
   location.search.substr(1).split("&").forEach(function(item) {getParams[item.split("=")[0]] = item.split("=")[1]})
