@@ -604,6 +604,9 @@ class ESPLoader {
     ESP_SPI_ATTACH = 0x0D;
     ESP_CHANGE_BAUDRATE = 0x0F;
 
+    // fake
+    NAME = "ESP32-S2";
+
     // Only Stub supported commands
     ESP_ERASE_FLASH = 0xD0;
     ESP_ERASE_REGION = 0xD1;
