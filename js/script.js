@@ -35,6 +35,26 @@ let bytesReceived = 0;
 let currentBoard;
 let buttonState = 0;
 
+
+
+
+  /*
+var remote_file = { 
+
+
+  0: "/versions/v0/1_0xe000_boot_app0.bin",
+  1: "/versions/v0/2_0x1000_bootloader_qio_80m.bin",
+  2: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
+  3: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin"    
+
+}
+
+  */
+
+
+
+  
+
 document.addEventListener('DOMContentLoaded', () => {
   let debug = false;
   var getParams = {}
@@ -332,7 +352,7 @@ async function makeRequest(method, url) {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url);
         xhr.responseType = 'arraybuffer';
-        
+
         xhr.onload = function () {
             if (this.status >= 200 && this.status < 300) {
                 resolve(xhr.response);
@@ -358,20 +378,7 @@ async function makeRequest(method, url) {
  */
 async function clickProgram() {
   const readUploadedFileAsArrayBuffer = (inputFile) => {
-    const reader = new FileReader();
 
-    return new Promise((resolve, reject) => {
-      reader.onerror = () => {
-        reader.abort();
-        reject(new DOMException("Problem parsing input file."));
-      };
-
-      reader.onload = () => {
-        resolve(reader.result);
-      };
-      reader.readAsArrayBuffer(inputFile);
-    });
-  };
 
   baudRate.disabled = true;
   butErase.disabled = true;
@@ -381,12 +388,11 @@ async function clickProgram() {
     offsets[i].disabled = true;
   }
 
-  var remote_file = {
-    0: "/versions/v0/1_0xe000_boot_app0.bin",
-    1: "/versions/v0/2_0x1000_bootloader_qio_80m.bin",
-    2: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
-    3: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin"    
-  }
+
+  var selected_prog = false;
+
+
+  for 
 
   for (let file of getValidFiles()) {
     progress[file].classList.remove("hidden");

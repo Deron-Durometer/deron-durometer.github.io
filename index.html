@@ -18,6 +18,79 @@
     <link rel="stylesheet" href="css/light.css" id="light" class="alternate" disabled>
     <link rel="stylesheet" href="css/dark.css"  id="dark"  class="alternate" disabled>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+
+    <script>
+        
+        var versions = {
+
+          0: {
+            name: "E-Ink Hello world test",
+            files: {
+              0: {
+                url: "/versions/v0/1_0xe000_boot_app0.bin",
+                offset: "0xe000"
+              }
+              1: {
+                url: "/versions/v0/2_0x1000_bootloader_qio_80m.bin",
+                offset: "0x1000"
+              }
+              2: {
+                url: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
+                offset: "0x10000"
+              }
+              3: { 
+                url: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin",
+                offset: "0x8000"
+              }
+            }
+          },
+
+          1: {
+            name: "BLE test",
+            files: {
+              0: {
+                url: "/versions/v0/1_0xe000_boot_app0.bin",
+                offset: "0xe000"
+              }
+              1: {
+                url: "/versions/v0/2_0x1000_bootloader_qio_80m.bin",
+                offset: "0x1000"
+              }
+              2: {
+                url: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
+                offset: "0x10000"
+              }
+              3: { 
+                url: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin",
+                offset: "0x8000"
+              }
+            }
+          }
+
+        }
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+
+            for (items in versions) {
+                $('#prog').append($('<option>', {
+                    value: items,
+                    text: 'Name'
+                }));
+            }
+
+        });
+    </script>
+
+
     <!-- import the webpage's javascript file -->
     <script src="js/utilities.js" defer></script>
     <script src="js/esptool.js" defer></script>
@@ -59,6 +132,16 @@
       </div>
       <div id="app">
         <div id="commands">
+
+
+             <label for="prog">Choose a version:</label>
+
+            <select name="prog" id="prog">
+
+            </select> 
+
+
+
           <div class="upload">
             <label>Offset: 0x
               <input class="offset" type="text" value="0xe000" />
