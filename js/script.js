@@ -464,6 +464,7 @@ async function clickProgram() {
     progress[i].classList.add("hidden");
     progress[i].querySelector("div").style.width = "0";
   }
+  butProgram.disabled = false;
   butErase.disabled = false;
   baudRate.disabled = false;
   butProgram.disabled = getValidFiles().length == 0;
