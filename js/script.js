@@ -392,8 +392,6 @@ async function clickProgram() {
   var selected_prog = false;
 
 
-  for 
-
   for (let file of getValidFiles()) {
     progress[file].classList.remove("hidden");
     console.log(firmware);
