@@ -408,25 +408,18 @@ async function clickProgram() {
   var selected_data = versions[selected_index]['files'];
   console.log("selected index = " + selected_index + ", selected_data = ", selected_data);
 
+
   for (var i = 0; i < Object.keys(selected_data).length; i++){
-    console.log(i)
-  }
-
-  for (a in selected_data){
-      console.log(selected_data[a])
-  }
-
-  for (index in selected_data) {
     progress[file].classList.remove("hidden");
 
-    var single_file = selected_data[index]['url'];
+    var single_file = selected_data[i]['url'];
     let contents = await makeRequest("GET", [single_file]);
 
     console.log(single_file);
     //console.log(offset);
     console.log(contents);
     try {
-      var offset_value = selected_data[index]['offset'];
+      var offset_value = selected_data[i]['offset'];
       console.log(offset_value);      
       let offset = parseInt(offset_value, 16);
       console.log(offset);
