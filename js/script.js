@@ -326,6 +326,30 @@ async function clickErase() {
   }
 }
 
+
+async function makeRequest(method, url) {
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.onload = function () {
+            if (this.status >= 200 && this.status < 300) {
+                resolve(xhr.response);
+            } else {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                });
+            }
+        };
+        xhr.onerror = function () {
+            reject({
+                status: this.status,
+                statusText: xhr.statusText
+            });
+        };
+        xhr.send();
+    });
+}
 /**
  * @name clickProgram
  * Click handler for the program button.
@@ -354,11 +378,22 @@ async function clickProgram() {
     firmware[i].disabled = true;
     offsets[i].disabled = true;
   }
+
+  var remote_file = {
+    0: "/versions/v0/1_0xe000_boot_app0.bin",
+    1: "/versions/v0/2_0x1000_bootloader_qio_80m",
+    2: "/versions/v0/3_0x10000_GxEPD_Hello_world.ino.bin",
+    3: "/versions/v0/4_0x8000_GxEPD_Hello_world.ino.partitions.bin"    
+  }
+
   for (let file of getValidFiles()) {
     progress[file].classList.remove("hidden");
     console.log(firmware);
-    let binfile = firmware[file].files[0];
-    let contents = await readUploadedFileAsArrayBuffer(binfile);
+    //let binfile = firmware[file].files[0];
+    //let contents = await readUploadedFileAsArrayBuffer(binfile);
+    let contents = makeRequest("GET", remote_file[file]);
+ 
+
     console.log(file);
     //console.log(offset);
     console.log(contents);
