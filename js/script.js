@@ -394,6 +394,7 @@ function getValidFiles() {
       offsetVals.push(offs);
     }
   }
+  console.log(validFiles);
   return validFiles;
 }
 
