@@ -1,4 +1,4 @@
-// Note: the code will still work without this line, but without it you
+// Note: the code will still work without this line, but without it youprogress-bar 
 // will see an error in the editor
 /* global EspLoader, ESP_ROM_BAUD, port, reader, inputBuffer */
 'use strict';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     debugMsg: debugMsg,
     debug: debug})
   butConnect.addEventListener('click', () => {
-    clickConnect().catch(async (e) => {
+    new clickConnect().catch(async (e) => {
       errorMsg(e.message);
       disconnect();
       toggleUIConnected(false);
