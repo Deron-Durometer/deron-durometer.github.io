@@ -1281,7 +1281,7 @@ class ESPLoader {
     }
 
     _update_image_flash_params = function(image, address, flash_size, flash_mode, flash_freq) {
-        console.log("_update_image_flash_params " + flash_size + " " + flash_mode + " " + flash_freq);
+        console.log("_update_image_flash_params " + flash_size + " " + flash_mode + " " + flash_freq + " " + address);
         if (image.length < 8) {
             return image;
         }
