@@ -6,7 +6,8 @@
 let espTool;
 let isConnected = false;
 
-const baudRates = [921600, 115200, 230400, 460800];
+//const baudRates = [921600, 115200, 230400, 460800];
+const baudRates = [115200];
 
 const bufferSize = 512;
 const colors = ['#00a7e9', '#f89521', '#be1e2d'];
