@@ -1286,7 +1286,7 @@ class ESPLoader {
             return image;
         }
         console.log(this.chip.NAME + " " + this.chip.BOOTLOADER_FLASH_OFFSET);
-        
+
         if (address != this.chip.BOOTLOADER_FLASH_OFFSET) {
             return image;
         }
@@ -1352,7 +1352,7 @@ class ESPLoader {
             // XXX : handle padding
             image = fileArray[i].data;
             address = fileArray[i].address;
-            console.log("Image Length " + image.length);
+            console.log("Image Length " + image.length + ", address = " + address);
             if (image.length === 0) {
                 this.log("Warning: File is empty");
                 continue;
