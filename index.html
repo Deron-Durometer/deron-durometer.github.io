@@ -81,10 +81,9 @@
         $( document ).ready(function() {
 
             for (items in versions) {
-                $('#prog').append($('<option>', {
-                    value: items,
-                    text: 'Name'
-                }));
+                //console.log(versions[items])
+                
+                $('#prog').append('<option value="'+versions[items].items+'">' + versions[items].name + '</option>');
             }
 
         });
