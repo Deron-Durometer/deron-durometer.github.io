@@ -401,10 +401,10 @@ async function clickProgram() {
   baudRate.disabled = true;
   butErase.disabled = true;
   butProgram.disabled = true;
-  for (let i=0; i< 4; i++) {
-    firmware[i].disabled = true;
-    offsets[i].disabled = true;
-  }
+  //for (let i=0; i< 4; i++) {
+  //  firmware[i].disabled = true;
+  //  offsets[i].disabled = true;
+  //}
 
 
 
@@ -460,8 +460,8 @@ async function clickProgram() {
   }
   */
   for (let i=0; i< 4; i++) {
-    firmware[i].disabled = false;
-    offsets[i].disabled = false;
+  //  firmware[i].disabled = false;
+  //  offsets[i].disabled = false;
     progress[i].classList.add("hidden");
     progress[i].querySelector("div").style.width = "0";
   }
