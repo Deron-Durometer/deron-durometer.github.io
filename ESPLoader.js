@@ -893,7 +893,9 @@ class ESPLoader {
 
     check_command = async ({op_description="", op=null, data=[], chk=0, timeout=3000} = {}) => {
         console.log("check_command " + op) ;
-        var resp = await this.command({op:op, data:data, chk:chk, timeout:3000});
+        var resp = await this.command({op:op, data:data, chk:chk, timeout:3000}).then(function(){
+            alert("done")
+        });
 
         console.log(resp);
         if (resp[1].length > 4) {
