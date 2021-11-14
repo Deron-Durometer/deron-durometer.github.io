@@ -124,6 +124,7 @@ function initBaudRate() {
 }
 
 function updateProgress(part, percentage) {
+  console.warn("Part = " + part + ", percentage = " + percentage);
   let progressBar = progress[part].querySelector("div");
   progressBar.style.width = percentage + "%";
 }
