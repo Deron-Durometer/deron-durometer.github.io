@@ -56,7 +56,8 @@ var remote_file = {
   
 
 document.addEventListener('DOMContentLoaded', () => {
-  let debug = false;
+  var part_index = 0;
+  let debug = true;
   var getParams = {}
   location.search.substr(1).split("&").forEach(function(item) {getParams[item.split("=")[0]] = item.split("=")[1]})
   if (getParams["debug"] !== undefined) {
@@ -124,8 +125,9 @@ function initBaudRate() {
 }
 
 function updateProgress(part, percentage) {
-  console.warn("Part = " + part + ", percentage = " + percentage);
-  let progressBar = progress[part].querySelector("div");
+  console.warn("Part = " + part + ", part_index = " +  part_index + ", percentage = " + percentage);
+
+  let progressBar = progress[part_index].querySelector("div");
   progressBar.style.width = percentage + "%";
 }
 
@@ -378,6 +380,7 @@ async function makeRequest(method, url) {
  * Click handler for the program button.
  */
 async function clickProgram() {
+  part_index = 0;
   const readUploadedFileAsArrayBuffer = (inputFile) => {
     const reader = new FileReader();
 
@@ -424,6 +427,7 @@ async function clickProgram() {
       console.log(offset_value);      
       let offset = parseInt(offset_value, 16);
       console.log(offset);
+      part_index = i;
       await espTool.flashData(contents, offset, single_file);
       await sleep(100);
       logMsg("To run the new firmware, please reset your device.");
