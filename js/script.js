@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBaudRate();
   loadAllSettings();
   updateTheme();
-  logMsg("Adafruit WebSerial ESPTool loaded.");
+  logMsg("Deron Durometer ESPTool loaded.");
 });
 
 /**
