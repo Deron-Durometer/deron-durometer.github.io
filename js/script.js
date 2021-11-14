@@ -356,6 +356,7 @@ async function clickProgram() {
   }
   for (let file of getValidFiles()) {
     progress[file].classList.remove("hidden");
+    console.log(firmware);
     let binfile = firmware[file].files[0];
     let contents = await readUploadedFileAsArrayBuffer(binfile);
     console.log(file);
@@ -395,6 +396,7 @@ function getValidFiles() {
     }
   }
   console.log(validFiles);
+  console.log(offsetVals);
   return validFiles;
 }
 
