@@ -605,7 +605,7 @@ class ESPLoader {
     ESP_CHANGE_BAUDRATE = 0x0F;
 
     // fake
-    NAME = "ESP32-S2";
+    CHIP_NAME = "ESP32-S2";
 
     // Only Stub supported commands
     ESP_ERASE_FLASH = 0xD0;
