@@ -1285,11 +1285,11 @@ class ESPLoader {
         if (image.length < 8) {
             return image;
         }
-        console.log(this.chip.NAME + " " + this.chip.BOOTLOADER_FLASH_OFFSET);
+        //console.log(this.chip.NAME + " " + this.chip.BOOTLOADER_FLASH_OFFSET);
 
-        if (address != this.chip.BOOTLOADER_FLASH_OFFSET) {
-            return image;
-        }
+        //if (address != this.chip.BOOTLOADER_FLASH_OFFSET) {
+        //    return image;
+        //}
         if (flash_size === 'keep' && flash_mode === 'keep' && flash_freq === 'keep') {
             console.log("Not changing the image");
             return image;
