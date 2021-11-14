@@ -391,7 +391,7 @@ async function clickProgram() {
     console.log(firmware);
     //let binfile = firmware[file].files[0];
     //let contents = await readUploadedFileAsArrayBuffer(binfile);
-    let contents = makeRequest("GET", remote_file[file]);
+    let contents = await makeRequest("GET", remote_file[file]);
  
 
     console.log(file);
