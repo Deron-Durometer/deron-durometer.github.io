@@ -408,6 +408,9 @@ async function clickProgram() {
   var selected_data = versions[selected_index]['files'];
   console.log("selected index = " + selected_index + ", selected_data = ", selected_data);
 
+  for (var i = 0; i < Object.keys(selected_data).length; i++){
+    console.log(i)
+  }
 
   for (a in selected_data){
       console.log(selected_data[a])
