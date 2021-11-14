@@ -406,7 +406,12 @@ async function clickProgram() {
   // NEW
   var selected_index = $('#prog option').filter(':selected').val();
   var selected_data = versions[selected_index]['files'];
-  console.log("selected index = " + selected_index + ", selected_data = " + selected_data);
+  console.log("selected index = " + selected_index + ", selected_data = ", selected_data);
+
+
+  for (a in selected_data){
+      console.log(selected_data[a])
+  }
 
   for (index in selected_data) {
     progress[file].classList.remove("hidden");
