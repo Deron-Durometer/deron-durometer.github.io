@@ -276,7 +276,7 @@ programButton.onclick = async () => {
 
         fileArr.push({data:fileObj.data, address:offset});
     }
-    console.warn(fileArray);
+    console.warn(fileArr);
     esploader.write_flash({fileArray: fileArr, flash_size: 'keep'});
 
 }
