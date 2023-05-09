@@ -1,7 +1,7 @@
 {
   "name": "Deron Durometer Embedded v1.0.4",
   "version": "1.0.4",
-  "new_install_prompt_erase": false,
+  "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32",
