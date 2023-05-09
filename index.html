@@ -61,12 +61,15 @@
         <li class="list-group-item">
           <div class="row">
             <div class="col-9">
-              Durometer v1.0.4
+              <p class="mb-0 small lh-sm">
+                <strong class="d-block text-gray-dark">Durometer Embedded Software v1.0.4</strong>
+                <i>09-05-2023</i>
+              </p>
             </div>
             <div class="col">
               <esp-web-install-button manifest="/firmware/deron-durometer-mbed-v1.0.4/manifest.json">
-                <button type="button" class="btn btn-primary" slot="activate">Install</button>
-                <span slot="unsupported">Ah snap, your browser doesn't work!</span>
+                <button type="button" class="btn btn-primary" slot="activate" style="float: right;">Install</button>
+                <span slot="unsupported">Use Chrome or Edge!</span>
                 <span slot="not-allowed">Ah snap, you are not allowed to use this on HTTP!</span>
               </esp-web-install-button>
             </div>
