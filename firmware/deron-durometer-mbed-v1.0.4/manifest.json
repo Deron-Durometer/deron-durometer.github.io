@@ -1,0 +1,16 @@
+{
+  "name": "Deron Durometer Embedded",
+  "version": "1.0.4",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+        "parts": [
+          { "path": "deron-durometer-mbed-v1.0.4.ino.boot_app0.bin", "offset": 57344 },		// offset 0xe000
+          { "path": "deron-durometer-mbed-v1.0.4.ino.bin", "offset": 65536 },				// offset 0x10000
+          { "path": "deron-durometer-mbed-v1.0.4.ino.bootloader.bin", "offset": 4096 },		// offset 0x1000
+          { "path": "deron-durometer-mbed-v1.0.4.ino.partitions.bin", "offset": 32768 }		// offset 0x8000
+        ]
+    }
+  ]
+}
