@@ -1,0 +1,16 @@
+{
+  "name": "Durometer battery charge status test",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+        "parts": [
+          { "path": "durometer-mm-pcb-test-battery.ino.boot_app0.bin", "offset": 57344 },	
+          { "path": "durometer-mm-pcb-test-battery.ino.", "offset": 65536 },				
+          { "path": "durometer-mm-pcb-test-battery.ino.bootloader.bin", "offset": 4096 },		
+          { "path": "durometer-mm-pcb-test-battery.ino.partitions.bin", "offset": 32768 }	
+        ]
+    }
+  ]
+}
