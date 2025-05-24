@@ -1,0 +1,16 @@
+{
+  "name": "Dibu distri MX90393 test",
+  "version": "1.0.0",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+        "parts": [
+          { "path": "durometer-dibu-MX90393-test-v1.0.0.ino.boot_app0.bin", "offset": 57344 },	
+          { "path": "durometer-dibu-MX90393-test-v1.0.0.ino.bin", "offset": 65536 },				
+          { "path": "durometer-dibu-MX90393-test-v1.0.0.ino.bootloader.bin", "offset": 4096 },		
+          { "path": "durometer-dibu-MX90393-test-v1.0.0.ino.partitions.bin", "offset": 32768 }	
+        ]
+    }
+  ]
+}
