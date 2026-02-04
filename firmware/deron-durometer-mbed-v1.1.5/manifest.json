@@ -5,6 +5,7 @@
   "builds": [
     {
       "chipFamily": "ESP32",
+       "improv": false,
         "parts": [
           { "path": "boot_app0.bin", "offset": 57344 },	
           { "path": "deron-durometer-mbed-v1.1.5.ino.bin", "offset": 65536 },				
